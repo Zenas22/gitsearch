@@ -26,15 +26,20 @@ export class ViunguComponent implements OnInit {
   }
 
   findRepo(){
+
     interface ApiResponse{
       html_url: any;
       name: string;
       description: any;
       forks: number;
       license: any;
+
     }
+
     let promise = new Promise((resolve,reject)=>{
+
       this.http.get<ApiResponse>("https://api.github.com/repos/" + this.userName + "/" + this.repoName + "?access_token=" + environment.access_token).toPromise().then(response=>{
+
         this.repo.link = response.html_url
         this.repo.name = response.name
         this.repo.description = response.description
@@ -42,8 +47,10 @@ export class ViunguComponent implements OnInit {
         this.repo.license = response.license
 
         resolve();
+
       },
       error=>{
+
         this.repo.link = ""
         this.repo.name = ""
         this.repo.description = ""
@@ -51,9 +58,12 @@ export class ViunguComponent implements OnInit {
         this.repo.license = ""
 
         reject(error);
+
       })
     })
+
     return promise
+
   }
 
   searchRepo(){
