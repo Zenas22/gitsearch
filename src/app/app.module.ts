@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { CreatorPipe } from './creator.pipe';
 import { WatuComponent } from './watu/watu.component';
 import { ViunguComponent } from './viungu/viungu.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatorPipe,
     WatuComponent,
-    ViunguComponent
+    ViunguComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
