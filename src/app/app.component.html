@@ -1,24 +1,21 @@
-<div class="container">
+<div class="container-fluid">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">gitSearch</a>
+    <ul class="navbar-nav mr-auto">
 
-  <div class="form-group-row">
-    <input type="text" name="search" #search>
-    <button type="button" (click)="searchHub(search)">Search</button>
-  </div>
-
-  <h2>Username: {{user.login}}</h2>
-  <img src="{{user.avatar_url}}" alt="">
-  <p>Bio: {{user.bio}}</p>
-  <p>Repositories: {{user.public_repos}}</p>
-  <p>Following: {{user.following}}</p>
-  <p>Followers: {{user.followers}}</p>
-  <a href="{{user.html_url}}">Go to Github</a>
-
-
-  <div class="column" *ngFor="let repo of repos">
-    <h1>{{repo.name}}</h1>
-    <p>{{repo.description}}</p>
-    <p>Created on {{repo.created_at|date}}</p>
-    <p>{{repo.total_commits}}</p>
+      <li class="nav-item"><a class="nav-link" routerLink='/watu' routerLinkActive='active'>Users</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink='/viungu' routerLinkActive='active'>Repositories</a></li>
+      
+    </ul>
+    <span class="navbar-text">Happy searching :)</span>
+  </nav>
+  <div class="row">
+    <div class="jumbotron">
+      <div class="title">
+        <h1>gitSearch</h1>
+      </div>
+      <p>This website will help you find Users and Repositories on Github. Just a school project though dont be too excited.</p>
+    </div>
   </div>
 
 </div>

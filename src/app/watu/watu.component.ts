@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { UsersService } from '../huduma/users';
+import { UsersService } from '../huduma/users.service';
 import { User } from '../darasa/user';
 import { environment } from '../../environments/environment';
 
@@ -24,7 +24,7 @@ export class WatuComponent implements OnInit {
   }
 
   searchUser(){
-    this.userFindService.searchUser(this.username);
+    this.userFindService.searchUser(this.userName);
     this.userFindService.findUser();
     this.user = this.userFindService.user;
   }

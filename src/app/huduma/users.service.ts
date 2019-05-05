@@ -13,7 +13,7 @@ export class UsersService {
   user: User
   userName: string;
 
-  constructor(private http:Http) {
+  constructor(private http:HttpClient) {
     this.user = new User("","","","","","","","", new Date());
   }
 
@@ -29,7 +29,7 @@ export class UsersService {
       html_url: any;
     }
     let promise = new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + "?access_token" + environment.access_token).toPromise().then(response=>{
+      this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_token" + environment.access_token).toPromise().then(response=>{
         this.user.avatar = response.avatar_url
         this.user.username = response.login
         this.user.name = response.name

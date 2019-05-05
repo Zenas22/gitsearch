@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { Repository } from '../darasa/repository';
-import { RepoService } from '../huduma/repo';
+import { Array } from '../darasa/array';
+import { RepoService } from '../huduma/repo.service';
 
 
 @Component({
@@ -17,9 +19,9 @@ export class ViunguComponent implements OnInit {
   repo: Repository;
   userName: string;
   repoName: string;
-  repos: Repos;
+  repos: Array;
 
-  constructor(private http:Http, private repoRequestService: RepoService) {
+  constructor(private http:HttpClient, private repoRequestService: RepoService) {
     this.repo = new Repository("","","","","");
   }
 
@@ -55,8 +57,8 @@ export class ViunguComponent implements OnInit {
   }
 
   searchRepo(){
-    this.repoRequestService.searchRepo(this.username);
-    this.repoRequestService.findRepo();
+    this.repoRequestService.searchRepo(this.userName);
+    this.repoRequestService.getRepo();
     this.repos = this.repoRequestService.repos;
   }
 

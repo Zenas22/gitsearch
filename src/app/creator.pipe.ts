@@ -15,7 +15,7 @@ export class CreatorPipe implements PipeTransform {
 
     var dateCount = Math.round(dateDifferenceSeconds/secondsPerDay);
 
-    if (dateCounter >= 1){
+    if (dateCount >= 1){
       return dateCount - 1;
     }else{
       return 0;
