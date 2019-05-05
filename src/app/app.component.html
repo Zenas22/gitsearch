@@ -1,20 +1,26 @@
-<button type="button" (click)="searchHub(search)">Search</button>
-<input type="text" name="search" #search>
+<div class="container">
 
-<h2>Username: {{user.login}}</h2>
-<img src="{{user.avatar_url}}" alt="">
-<p>Bio: {{user.bio}}</p>
-<p>Repositories: {{user.public_repos}}</p>
-<p>Following: {{user.following}}</p>
-<p>Followers: {{user.followers}}</p>
-<a href="{{user.html_url}}">Go to Github</a>
+  <div class="form-group-row">
+    <input type="text" name="search" #search>
+    <button type="button" (click)="searchHub(search)">Search</button>
+  </div>
+
+  <h2>Username: {{user.login}}</h2>
+  <img src="{{user.avatar_url}}" alt="">
+  <p>Bio: {{user.bio}}</p>
+  <p>Repositories: {{user.public_repos}}</p>
+  <p>Following: {{user.following}}</p>
+  <p>Followers: {{user.followers}}</p>
+  <a href="{{user.html_url}}">Go to Github</a>
 
 
-<div class="column" *ngFor="let repo of repos">
-  <h1>{{repo.name}}</h1>
-  <p>{{repo.description}}</p>
-  <p>{{repo.created_at|date}}</p>
-  <p>{{repo.total_commits}}</p>
+  <div class="column" *ngFor="let repo of repos">
+    <h1>{{repo.name}}</h1>
+    <p>{{repo.description}}</p>
+    <p>Created on {{repo.created_at|date}}</p>
+    <p>{{repo.total_commits}}</p>
+  </div>
+
 </div>
 
 
