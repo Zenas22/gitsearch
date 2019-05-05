@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { evironment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import { Repository } from '../darasa/repository';
 
 @Injectable({
@@ -9,25 +9,43 @@ import { Repository } from '../darasa/repository';
 })
 export class RepoService {
 
-  repos: Repos;
+  repo: Repository;
   userName: string;
+  repoName: string;
+  repos: Repos;
 
-  constructor(private http:Http) {
-    this.repos = new Repos("");
+  constructor(private http:Http, private repoRequestService: RepoService) {
+    this.repo = new Repository("","","","","");
   }
 
-  fetchRepo(){
+  findRepo(){
+    interface ApiResponse{
+      html_url: any;
+      name: string;
+      description: any;
+      forks: number;
+      license: any;
+    }
     let promise = new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + "/repos?access_token" + environment.access_token).toPromise().then(response=>{
-        this.repos.reposArray = response;
-        resolve()
+      this.http.get<ApiResponse>("https://api.github.com/repos/" + this.userName + "/" + this.repoName + "?access_token=" + environment.access_token).toPromise().then(response=>{
+        this.repo.link = response.html_url
+        this.repo.name = response.name
+        this.repo.description = response.description
+        this.repo.forks = response.forks
+        this.repo.license = response.license
+
+        resolve();
       },
       error=>{
-        this.repos.reposArray = [];
-        reject(error)
+        this.repo.link = ""
+        this.repo.name = ""
+        this.repo.description = ""
+        this.repo.forks = ""
+        this.repo.license = ""
+
+        reject(error);
       })
     })
-
     return promise
   }
 

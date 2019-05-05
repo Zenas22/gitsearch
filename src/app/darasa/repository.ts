@@ -1,3 +1,3 @@
 export class Repository {
-  constructor(public reposArray: {}){}
+  constructor(public link: any, public name: string, public description: any, public forks: any, public license: any){}
 }
