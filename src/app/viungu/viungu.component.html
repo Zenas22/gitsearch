@@ -22,10 +22,10 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 appHighlight class="card-title">Repository: {{repo.name}}</h5>
-            <p class="card-text">{{repo.description}}</p>
-            <p class="card-text">{{repo.forks}}</p>
-            <p class="card-text">{{repo.license}}</p>
+            <h5 appHighlight class="card-title">{{repo.name}}</h5>
+            <p class="card-text">Description: {{repo.description}}</p>
+            <p class="card-text">Forks: {{repo.forks}}</p>
+            <p class="card-text">License: {{repo.license}}</p>
             <button class="btn btn-dark"><a [href]="repo.link">View on Github</a></button>
           </div>
         </div>
@@ -42,8 +42,8 @@
             <!-- <img [src]="user.avatar_url" class="card-img-top" alt="avatar"> -->
             <div class="card-body">
               <h5 appHighlight class="card-title">{{repo.name}}</h5>
-              <p class="card-text">{{repo.description}}</p>
-              <p class="card-text">{{repo.forks}}</p>
+              <p class="card-text">Description: {{repo.description}}</p>
+              <p class="card-text">Forks: {{repo.forks}}</p>
 
               <button class="btn btn-dark"><a [href]="repo.html_url">View on Github</a></button>
             </div>
