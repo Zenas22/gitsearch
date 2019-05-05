@@ -1,3 +1,51 @@
-<p>
-  viungu works!
-</p>
+<div class="cotainer-fluid">
+  <div class="row">
+    <div class="jumbotron">
+      <h2 class="display-4">Search Repo</h2>
+      <p class="lead">Feel free to search for the exact repo of your user on Github below.</p>
+      <hr class="my-4">
+      <form class="form-group">
+        <input class="form-control" placeholder="Example...Zenas22" [(ngModel)]="userName" name="userName" (keyup)=findUser()>
+        <input class="form-control" placeholder="Example...gitsearch" [(ngModel)]="repoName" name="repoName" (keyup)=findRepo()>
+        <button type="reset" class="btn btn-warning">Clear</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="card mb-3 output" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="user.avatar" class="card-img" alt="avatar">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{repo.name}}</h5>
+            <p class="card-text">{{repo.description}}</p>
+            <p class="card-text">{{repo.forks}}</p>
+            <p class="card-text">{{repo.license}}</p>
+            <button class="btn btn-info"><a [href]="repo.link">View on Github</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <div *ngFor="let repo of repos.reposArray">
+        <div class="card">
+          <img [src]="user.avatar" class="card-img-top" alt="avatar">
+          <div class="card-body">
+            <h5 class="card-title">{{repo.name}}</h5>
+            <p class="card-text">{{repo.description}}</p>
+            <p class="card-text">{{repo.forks}}</p>
+
+            <button class="btn btn-info"><a [href]="repo.link">View on Github</a></button>
+          </div>
+          <div class="card-footer">
+            <p class="card-text text-muted">{{repo.license}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
