@@ -1,0 +1,9 @@
+.title,.navbar-brand{
+  color: #FFC300;
+}
+.container-fluid,.jumbotron{
+  background-color: #581845;
+}
+p,.navbar-text{
+  color: white;
+}

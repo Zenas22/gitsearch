@@ -1,0 +1,28 @@
+*{
+  background-color: #581845;
+}
+.container-fluid{
+  background-color: #581845;
+}
+.display-4{
+  color: #FFC300;
+}
+.card{
+  float:right;
+  justify-content: center;
+}
+.lead{
+  color: white;
+}
+a,button{
+  color: inherit;
+  background-color: #581845;
+  text-decoration: none;
+}
+a:hover,button:hover{
+  background-color: #FFC300;
+  text-decoration: none;
+}
+.jumbotron{
+  border-color: #FFC107;
+}
