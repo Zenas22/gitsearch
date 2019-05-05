@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatorPipe } from './creator.pipe';
 import { WatuComponent } from './watu/watu.component';
+import { ViunguComponent } from './viungu/viungu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatorPipe,
-    WatuComponent
+    WatuComponent,
+    ViunguComponent
   ],
   imports: [
     BrowserModule,
