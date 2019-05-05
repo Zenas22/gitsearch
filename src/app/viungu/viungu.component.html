@@ -31,6 +31,7 @@
     </div>
 
     <div class="card-group">
+      <h3>Other repositories by the user</h3>
       <div *ngFor="let repo of repos.reposArray">
         <div class="card">
           <img [src]="user.avatar" class="card-img-top" alt="avatar">
@@ -39,7 +40,7 @@
             <p class="card-text">{{repo.description}}</p>
             <p class="card-text">{{repo.forks}}</p>
 
-            <button class="btn btn-info"><a [href]="repo.link">View on Github</a></button>
+            <button class="btn btn-info"><a href="{{repo.html_url}}">View on Github</a></button>
           </div>
           <div class="card-footer">
             <p class="card-text text-muted">{{repo.license}}</p>
