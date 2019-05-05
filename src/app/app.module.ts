@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatorPipe } from './creator.pipe';
+import { WatuComponent } from './watu/watu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatorPipe
+    CreatorPipe,
+    WatuComponent
   ],
   imports: [
     BrowserModule,
