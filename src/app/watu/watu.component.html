@@ -18,12 +18,12 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 appHighlight class="card-title">{{user.username}}</h5>
-            <p class="card-text">{{user.bio}}</p>
-            <p class="card-text">{{user.name}}</p>
-            <p class="card-text">{{user.repositories}}</p>
-            <p class="card-text">{{user.followers}}</p>
-            <p class="card-text">{{user.following}}</p>
+            <h5 appHighlight class="card-title">Login: {{user.username}}</h5>
+            <p class="card-text">Bio: {{user.bio}}</p>
+            <p class="card-text">Name: {{user.name}}</p>
+            <p class="card-text">Public repos: {{user.repositories}}</p>
+            <p class="card-text">Followers: {{user.followers}}</p>
+            <p class="card-text">Following: {{user.following}}</p>
             <button class="btn btn-warning"><a [href]="user.link">View on Github</a></button>
           </div>
         </div>
